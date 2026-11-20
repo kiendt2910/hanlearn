@@ -1,0 +1,26 @@
+{
+  "name": "HanLearn — Học Tiếng Trung Cho Người Việt",
+  "short_name": "HanLearn",
+  "description": "Nền tảng học tiếng Trung toàn diện từ Nền tảng đến HSK 1–6, HSK 3.0 với Flashcard FSRS, Đề thi HSK và Gia sư AI.",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F8FAFC",
+  "theme_color": "#1D4ED8",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

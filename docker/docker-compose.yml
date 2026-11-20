@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: hanlearn-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-hanlearn}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hanlearn_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-hanlearn}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - hanlearn_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-hanlearn} -d ${POSTGRES_DB:-hanlearn}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: hanlearn-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-hanlearn}:${POSTGRES_PASSWORD:-hanlearn_dev_password}@postgres:5432/${POSTGRES_DB:-hanlearn}?schema=public
+      AUTH_SECRET: ${AUTH_SECRET:-replace-with-a-secure-32-byte-random-secret}
+      AUTH_URL: ${AUTH_URL:-http://localhost:3000}
+      AUTH_TRUST_HOST: "true"
+      NEXT_PUBLIC_APP_NAME: "HanLearn"
+      STORAGE_DRIVER: "local"
+      STORAGE_LOCAL_DIR: "/app/storage/uploads"
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    volumes:
+      - hanlearn_uploads:/app/storage/uploads
+
+volumes:
+  hanlearn_pgdata:
+  hanlearn_uploads:

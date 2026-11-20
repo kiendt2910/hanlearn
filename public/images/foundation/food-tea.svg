@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" role="img" aria-label="Minh họa từ vựng đồ ăn thức uống: 米饭 (cơm) và 茶 (trà)">
+  <rect width="480" height="260" rx="14" fill="#FFFBEB"/>
+  <rect x="20" y="200" width="440" height="40" rx="8" fill="#FEF3C7"/>
+  <!-- Bowl of Rice -->
+  <path d="M85 130 Q150 185 215 130 Z" fill="#2563EB"/>
+  <path d="M95 130 Q150 86 205 130 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="150" y="54" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#0F172A">米饭 (mǐfàn)</text>
+  <text x="150" y="72" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#475569">Cơm trắng — dùng với 吃 (chī)</text>
+  <!-- Cup of Tea -->
+  <rect x="295" y="105" width="76" height="65" rx="12" fill="#FFFFFF" stroke="#059669" stroke-width="3"/>
+  <path d="M371 118 Q396 118 396 138 Q396 156 371 156" fill="none" stroke="#059669" stroke-width="4"/>
+  <rect x="303" y="122" width="60" height="40" rx="6" fill="#A7F3D0"/>
+  <text x="335" y="54" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#0F172A">茶 (chá)</text>
+  <text x="335" y="72" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#475569">Trà — dùng với 喝 (hē)</text>
+  <text x="240" y="225" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="600" fill="#92400E">我想吃米饭，想喝茶 (Wǒ xiǎng chī mǐfàn, xiǎng hē chá)</text>
+</svg>

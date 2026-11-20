@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HanLearn Verified Vocabulary Content Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["simplified", "pinyin", "primaryMeaningVi", "origin"],
+    "properties": {
+      "simplified": { "type": "string", "minLength": 1 },
+      "traditional": { "type": "string" },
+      "pinyin": { "type": "string", "minLength": 1 },
+      "pinyinNumbered": { "type": "string" },
+      "partOfSpeech": { "type": "string" },
+      "primaryMeaningVi": { "type": "string", "minLength": 1 },
+      "primaryMeaningEn": { "type": "string" },
+      "commonMistakesVi": { "type": "string" },
+      "origin": {
+        "type": "string",
+        "enum": ["VERIFIED_ORIGINAL", "OFFICIAL_LICENSED", "DEMO", "AI_GENERATED"]
+      }
+    }
+  }
+}
